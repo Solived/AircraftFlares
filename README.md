@@ -22,8 +22,10 @@ and a public export API for missile guidance integration.
 Solived-AircraftFlares/
 ├── fxmanifest.lua   — resource manifest
 ├── config.lua       — all configuration + two shared helper functions
-├── client.lua       — rendering, effects, audio, input, key bindings
-└── server.lua       — authority: state, ammo, cooldowns, jam, rearm
+├── client/
+    └── main.lua       — rendering, effects, audio, input, key bindings
+├── server/
+    └── server.lua       — authority: state, ammo, cooldowns, jam, rearm
 ```
 
 `config.lua` is declared as a **shared script**, meaning both the client and server load it. The two helper functions it exports (`GetAircraftConfig` and `IsAllowedSeat`) are used on both sides so logic stays consistent without duplication.
